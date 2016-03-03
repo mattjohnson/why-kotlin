@@ -23,4 +23,14 @@ class HelloWorldSpec extends Specification {
         world.sayHelloFromJava() == "Hello, World!"
         world.sayHelloFromGroovy() == "Hello, World!"
     }
+
+    def "it says hello to Groovy"() {
+        given:
+        def world = new Groovy_HelloWorld()
+
+        expect:
+        world.sayHello() == "Hello, World!"
+        world.sayHelloFromJava() == "Hello, World!"
+        world.sayHelloFromKotlin() == "Hello, World!"
+    }
 }
